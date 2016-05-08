@@ -31,3 +31,9 @@ As you can see in the root directory you'll find also the rhel7 version of the D
 <br>
 <br>
 Cheers.
+
+
+# References
+This container is also used in a Gitlab template, useful to create a persisten Gitlab on OSEv3 platform.
+More info at:
+https://github.com/sdellang/gitlab-openshift-persistent
