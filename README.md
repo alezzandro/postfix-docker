@@ -17,18 +17,17 @@ The three processes involved in the container creation were:
 - tail -f (on /var/log/maillog)
 
 The last process to run and to leave in foreground, it was (for sure) the tail one. tail process will keep running in foreground while postfix and rsyslog do their job, but, what happen if postfix or rsyslog exits unexpectedly?
-*Nothing!*
+<br>*Nothing!*<br>
 Docker container will keep running as soon as the tail process does. So your container orchestrator will never notice the absence of postfix process (unless you have some custom health check).
-
+<br><br>
 The solution I found was to use an internal processes orchestrator: supervisord (available in EPEL repo).
-Supervisord will be responsible to watch and keep them running your configured processes. If a process exits unexpectedly it will run the process again.
-So your Docker's CMD/ENTRYPOINT will be the supervisord command.
-
-
-Looking at 'resources' folder, you'll find the config file for rsyslog and supervisord, all the conf for postfix are done in place directly on Dockerfile.
-Please note: as I said before, the container is pre-configured as a standard SMTP server, if you need some other configuration (for example: auth, relay, etc.) you should make the changes by yourself editing the Dockerfile.
-
-As you can see in the root directory you'll find also the rhel7 version of the Dockerfile. Please keep in mind that for producing a working postfix container based on Red Hat Enterprise Linux 7 you should run the 'docker build' command on a RHEL7 machine.
-
-
+Supervisord will be responsible to watch and keep them running your configured processes. If a process exits unexpectedly it will run the process again.<br>
+So your Docker's CMD/ENTRYPOINT will be the supervisord command.<br>
+<br>
+Looking at 'resources' folder, you'll find the config file for rsyslog and supervisord, all the conf for postfix are done in place directly on Dockerfile.<br>
+Please note: as I said before, the container is pre-configured as a standard SMTP server, if you need some other configuration (for example: auth, relay, etc.) you should make the changes by yourself editing the Dockerfile.<br>
+<br>
+As you can see in the root directory you'll find also the rhel7 version of the Dockerfile. Please keep in mind that for producing a working postfix container based on Red Hat Enterprise Linux 7 you should run the 'docker build' command on a RHEL7 machine.<br>
+<br>
+<br>
 Cheers.
