@@ -38,6 +38,7 @@ As you can see in the root directory you'll find also the rhel7 version of the D
 Cheers.
 
 # References
+The automated Docker build is here: https://hub.docker.com/r/alezzandro/postfix/
 This container is also used in a Gitlab template, useful to create a persisten Gitlab on OSEv3 platform.
 More info at:
 https://github.com/sdellang/gitlab-openshift-persistent
