@@ -7,6 +7,7 @@ I've made this container keeping in mind the basic requirements for running this
 # Environment variables
 The docker container expects only one single env variable:<br>
    *myhostname* (string) the Hostname on which postfix is exposed.
+It's very important you set the current (external) hostname of the postfix server, for avoiding blacklist of some mail providers!
 
 # TL;DR Description
 I've successfully tested the container in various OpenShift environments, mainly as SMTP server (or with proper customization to the config file, as SMTP Relay server).
