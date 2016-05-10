@@ -5,8 +5,8 @@ This repository is used for sharing the work I've done for creating a postfix ma
 I've made this container keeping in mind the basic requirements for running this container in any containers' management system.
 
 # Environment variables
-The docker container expects only one single env variable:
-    *myhostname* (string) the Hostname on which postfix is exposed.
+The docker container expects only one single env variable:<br>
+   *myhostname* (string) the Hostname on which postfix is exposed.
 
 # TL;DR Description
 I've successfully tested the container in various OpenShift environments, mainly as SMTP server (or with proper customization to the config file, as SMTP Relay server).
