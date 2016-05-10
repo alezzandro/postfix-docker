@@ -4,6 +4,11 @@ Git repo for automated build of a postfix based docker container ready for OpenS
 This repository is used for sharing the work I've done for creating a postfix mailserver container.
 I've made this container keeping in mind the basic requirements for running this container in any containers' management system.
 
+# Environment variables
+The docker container expects only one single env variable:
+    *myhostname* (string) the Hostname on which postfix is exposed.
+
+# TL;DR Description
 I've successfully tested the container in various OpenShift environments, mainly as SMTP server (or with proper customization to the config file, as SMTP Relay server).
 
 The most challenging part was to correctly place the logs for sent emails (by postfix) directly on STDOUT. 
@@ -31,7 +36,6 @@ As you can see in the root directory you'll find also the rhel7 version of the D
 <br>
 <br>
 Cheers.
-
 
 # References
 This container is also used in a Gitlab template, useful to create a persisten Gitlab on OSEv3 platform.
